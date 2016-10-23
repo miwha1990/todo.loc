@@ -1,0 +1,50 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block { padding: 0 15px;}
+.icon-block .material-icons {font-size: inherit;}
+
+/*my_styling*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.add_task i, .submit_button i{padding: 0;}
+.add_task input,  .submit_button input{height: 100%; padding: 0 30px;}
+
+#toast-container {
+  right: auto !important;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+}
+#toast-container>div{float: none !important}
+.cross{color: #bababa}
+.cross td:nth-child(2){position: relative;}
+.cross td:nth-child(2):before{
+  content: '';
+  width: 100%;
+  display: block;
+  height: 2px;
+  position: absolute;
+  background: #bababa;
+  top: 50%;
+}
+.comment_form{
+  margin-top: 30px;
+  border:1px #FF9800 solid;
+}
+.comment_form > .row {padding: 20px 40px;}
+.submit_button{text-align: right;}
+section.comments_section .s3{border-right: 1px solid #aab9cc}
+section.comments_section article{ border-bottom: 1px solid #aab9cc;}
