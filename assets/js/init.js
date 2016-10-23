@@ -34,23 +34,26 @@
     });
 
     //Done - undone the task
-    $('.checks').on('click', function( event ) {
-      $(this).prev().toggle(this.checked);
-      $(this).parent().parent().toggleClass('cross');
-      var state =  $(this).prev().prop( "checked" );
-      var id = $(this).data('id');
-      data = 'status='+state;
-      $.ajax({
-            type: 'POST',
-            url: jq_url+'/home/edit_task/'+id,
-            data: data,
-            success: function(response) {
-              Materialize.toast(response.msg, 4000)
-            },
-            error: function(error){
-              Materialize.toast(error.msg, 4000)
-            }
+    $(document).on('click', '.checks',function( event ) {
+      
+        $(this).prev().toggle(this.checked);
+        $(this).parent().parent().toggleClass('cross');
+        var state =  $(this).prev().prop( "checked" );
+        var id = $(this).data('id');
+        data = 'status='+state;
+        console.log(jq_url+'/home/edit_task/'+id)
+        $.ajax({
+              type: 'POST',
+              url: jq_url+'/home/edit_task/'+id,
+              data: data,
+              success: function(response) {
+                Materialize.toast(response.msg, 4000)
+              },
+              error: function(error){
+                Materialize.toast(error.msg, 4000)
+              }
         });
+      
     })
 
     //adding comment to the task

@@ -75,7 +75,7 @@ class HomeModel extends CI_Model {
                     $title = "<a class='task_link'  data-id='{$item["id"]}' href='".BASE_URL."/home/task_page/".$item['id']."'>{$item['title']}</a>";
                     $checked = $item['status'] == 1 ? 'checked="checked"' : '';
                     $tr_class = $item['status'] == 1 ? 'class="cross"' : '';
-                    $checkbox = "<input type='checkbox' id='check".$item['id']."' {$checked}/><label data-id='".$item['id']."' for='check".$item['id']."'></label>";
+                    $checkbox = "<input type='checkbox' id='check".$item['id']."' {$checked}/><label class='checks' data-id='".$item['id']."' for='check".$item['id']."'></label>";
                 }
                 $records["output"] .= "<tr ".$tr_class."><td>".$checkbox."</td><td>".$title."</td><td>".$item['deadline']."</td></tr>";
             } 
